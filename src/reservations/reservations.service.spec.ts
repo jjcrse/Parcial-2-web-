@@ -1,10 +1,11 @@
-import { ConflictException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { RoomEntity } from '../rooms/entities/room.entity';
 import { ReservationEntity } from './entities/reservation.entity';
 import { ReservationRulesService } from './reservation-rules.service';
 import { ReservationsService } from './reservations.service';
+import { ConflictException } from '@nestjs/common';
+import { describe, it, jest, beforeEach } from '@jest/globals';
 
 describe('ReservationsService', () => {
   let service: ReservationsService;
