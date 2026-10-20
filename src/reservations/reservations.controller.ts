@@ -9,7 +9,7 @@ export class ReservationsController {
   constructor(private readonly reservationsService: ReservationsService) {}
 
   // TODO 1: Implement POST /api/reservations with a validated CreateReservationDto.
-  @Post("reservations")
+  @Post("")
   create(@Body() dto: CreateReservationDto) {
     return this.reservationsService.create(dto)
   }
@@ -17,7 +17,8 @@ export class ReservationsController {
 
   // TODO 2: Implement PATCH /api/reservations/:id/cancel with ParseIntPipe and no body.
   @Patch(":id/cancel")
-  reserve() {
+  cancel(@Param('id', ParseIntPipe) id: number) {
+    return this.reservationsService.cancel(id);
 
   }
 

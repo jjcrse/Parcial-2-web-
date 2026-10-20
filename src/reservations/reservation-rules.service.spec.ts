@@ -20,6 +20,9 @@ describe('ReservationRulesService', () => {
     } as ReservationEntity;
 
     // TODO TEST 1: Check the real rule's rejection with ConflictException.
+    it ('returns all serservation with statu', async() =>{
+      const reservations = [{id:1}, id]
+    })
     throw new Error('TODO TEST 1: complete the cancellation rule test');
   });
 });
