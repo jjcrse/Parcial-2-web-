@@ -1,4 +1,4 @@
-import { ConflictException } from '@nestjs/common';
+import { ConflictException, Injectable } from '@nestjs/common';
 import { ReservationEntity } from './entities/reservation.entity';
 import { ReservationRulesService } from './reservation-rules.service';
 import { describe, beforeEach, it } from 'node:test';
@@ -20,8 +20,9 @@ describe('ReservationRulesService', () => {
     } as ReservationEntity;
 
     // TODO TEST 1: Check the real rule's rejection with ConflictException.
-    it ('returns all serservation with statu', async() =>{
-      const reservations = [{id:1}, id]
+    ReservationEntity.findOne.mockResolvedValue(reservation)
+    ReservationRulesService.ConflictException.mockImplementation(() =>{
+      throw new ConflictException('Funciono')
     })
     throw new Error('TODO TEST 1: complete the cancellation rule test');
   });
